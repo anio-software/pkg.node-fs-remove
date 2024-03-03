@@ -1,5 +1,7 @@
-import nodeFsRemoveSync from "../src/index.mjs"
+import nodeFsRemove from "../src/index.mjs"
 
 console.log(
-	nodeFsRemoveSync("examples/dest")
+	await nodeFsRemove("examples/src")
 )
+
+console.log("done")

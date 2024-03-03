@@ -1,21 +1,22 @@
 {
-  "name": "@anio-js-foundation/node-fs-remove-sync",
+  "name": "@anio-node-foundation/fs-remove",
   "version": "1.0.0",
-  "description": "Synchronously remove a path.",
+  "description": "Remove a path of any type.",
   "main": "./dist/package.mjs",
   "author": "Anio Software <info@anio-software.de>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anio-js-foundation/node-fs-remove-sync.git"
+    "url": "git+https://github.com/anio-node-foundation/fs-remove.git"
   },
   "devDependencies": {
-    "@anio-js-core-foundation/node-fs-get-path-type-sync": "^1.0.0",
-    "@anio-js-core-foundation/node-fs-scandir-sync": "^1.0.0",
-    "@anio-js-foundation/bundle-package": "^3.1.2"
+    "@anio-node-foundation/fs-api": "^2.1.0",
+    "@anio-node-foundation/fs-get-path-type": "^1.0.1",
+    "@anio-node-foundation/fs-scandir": "^2.0.1",
+    "@anio-software/npm-package-bundler": "^1.0.0"
   },
   "scripts": {
-    "prepare": "./node_modules/.bin/bundle-package ."
+    "prepare": "./node_modules/.bin/npm-package-bundler ."
   },
   "files": [
     "./dist/package.mjs"

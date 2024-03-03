@@ -1,15 +1,13 @@
-# @anio-js-foundation/node-fs-remove-sync
+# @anio-node-foundation/fs-remove
 
-Synchronously remove a path.
+Remove a path of any type.
 
 ```js
-import nodeFsRemoveSync from "@anio-js-foundation/node-fs-remove-sync"
+import nodeFsRemove from "@anio-node-foundation/fs-remove"
 
 console.log(
-	nodeFsRemoveSync("examples/dest")
+	await nodeFsRemove("examples/src")
 )
+
+console.log("done")
 ```
-
-Todo: add function that ignores errors when deleting.
-
-Could be named `nodeFsRemoveSync.force`
