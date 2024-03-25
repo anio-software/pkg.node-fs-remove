@@ -1,6 +1,6 @@
 {
   "name": "@anio-node-foundation/fs-remove",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Remove a path of any type.",
   "main": "./build/package.mjs",
   "author": "Anio Software <info@anio.software>",
