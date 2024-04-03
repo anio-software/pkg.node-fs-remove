@@ -3,6 +3,7 @@
   "version": "3.0.0",
   "description": "Remove a path of any type.",
   "main": "./dist/package.min.mjs",
+  "typings": "./dist/index.d.ts",
   "author": "Anio Software <info@anio.software>",
   "license": "MIT",
   "repository": {
