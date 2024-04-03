@@ -1,4 +1,4 @@
-import nodeFsGetPathType from "@anio-node-foundation/fs-get-path-type"
+import {getTypeOfPath} from "@anio-fs/path-type"
 import {scandir} from "@anio-fs/scandir"
 
 async function removeSymbolicLink(fs_object, src) {
@@ -37,7 +37,7 @@ const remove_map = {
 }
 
 export default async function(fs_object, src) {
-	const path_type = await nodeFsGetPathType(src)
+	const path_type = await getTypeOfPath(src)
 
 	// 'src' does not exist
 	if (path_type === false) {
