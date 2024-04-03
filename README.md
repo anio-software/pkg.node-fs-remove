@@ -3,10 +3,10 @@
 Remove a path of any type.
 
 ```js
-import nodeFsRemove from "@anio-node-foundation/fs-remove"
+import {remove} from "@anio-node-foundation/fs-remove"
 
 console.log(
-	await nodeFsRemove("examples/src")
+	await remove("examples/src")
 )
 
 console.log("done")

@@ -1,7 +1,7 @@
-import nodeFsRemove from "../src/index.mjs"
+import {remove} from "../src/index.mjs"
 
 console.log(
-	await nodeFsRemove("examples/src")
+	await remove("examples/src")
 )
 
 console.log("done")
