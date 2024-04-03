@@ -1,4 +1,4 @@
-import {searchAndReplace, copyFile} from "vipen/processing"
+import {generateFromTemplate} from "vipen/autogenerate"
 
 const asyncToSync = {
 	"async function removeSymbolicLink(": "function removeSymbolicLink(",
@@ -20,8 +20,8 @@ export default {
 	realm: "js",
 	type: "package",
 
-	preprocessing: [
-		searchAndReplace("src/template.mjs", asyncToSync, "src/auto/sync.mjs"),
-		copyFile("src/template.mjs", "src/auto/async.mjs")
-	]
+	autogenerate: {
+		"sync.mjs": generateFromTemplate("src/template.mjs", asyncToSync),
+		"async.mjs": generateFromTemplate("src/template.mjs", {})
+	}
 }

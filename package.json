@@ -2,7 +2,7 @@
   "name": "@anio-node-foundation/fs-remove",
   "version": "3.0.0",
   "description": "Remove a path of any type.",
-  "main": "./build/package.mjs",
+  "main": "./dist/package.min.mjs",
   "author": "Anio Software <info@anio.software>",
   "license": "MIT",
   "repository": {
@@ -13,13 +13,13 @@
     "@anio-node-foundation/fs-api": "^3.0.0",
     "@anio-node-foundation/fs-get-path-type": "^2.0.0",
     "@anio-node-foundation/fs-scandir": "^3.0.0",
-    "@vipen/target-js": "^0.7.0",
-    "vipen": "^0.1.0"
+    "@vipen/target-js": "^0.14.0",
+    "vipen": "^0.2.1"
   },
   "scripts": {
     "prepare": "./node_modules/.bin/vipen ."
   },
   "files": [
-    "./build/package.mjs"
+    "./dist/"
   ]
 }
