@@ -1,6 +1,5 @@
 import nodeFsGetPathType from "@anio-node-foundation/fs-get-path-type"
 import {scandir, scandirSync} from "@anio-fs/scandir"
-import path from "node:path"
 
 async function removeSymbolicLink(fs_object, src) {
 	await fs_object.unlink(src)
