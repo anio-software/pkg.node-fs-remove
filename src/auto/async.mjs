@@ -1,5 +1,5 @@
 import nodeFsGetPathType from "@anio-node-foundation/fs-get-path-type"
-import nodeFsScandir from "@anio-node-foundation/fs-scandir"
+import {scandir, scandirSync} from "@anio-fs/scandir"
 import path from "node:path"
 
 async function removeSymbolicLink(fs_object, src) {
@@ -11,7 +11,7 @@ async function removeFile(fs_object, src) {
 }
 
 async function removeDirectory(fs_object, src) {
-	await nodeFsScandir(src, {
+	await scandir(src, {
 		async callback({type, relative_path, absolute_path}) {
 			const args = [fs_object, absolute_path]
 

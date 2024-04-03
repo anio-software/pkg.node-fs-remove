@@ -5,7 +5,7 @@ const asyncToSync = {
 	"await fs_object.unlink(src)": "fs_object.unlink(src)",
 	"async function removeFile(": "function removeFile(",
 	"async function removeDirectory(": "function removeDirectory(",
-	"await nodeFsScandir(": "nodeFsScandir.sync(",
+	"await scandir(": "scandirSync(",
 	"async callback({type, relative_path, absolute_path}) {": "callback({type, relative_path, absolute_path}) {",
 	"await removeSymbolicLink(": "removeSymbolicLink(",
 	"await removeDirectory(": "removeDirectory(",
