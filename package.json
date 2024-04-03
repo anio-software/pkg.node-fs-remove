@@ -1,5 +1,5 @@
 {
-  "name": "@anio-node-foundation/fs-remove",
+  "name": "@anio-fs/remove",
   "version": "3.0.0",
   "description": "Remove a path of any type.",
   "main": "./dist/package.min.mjs",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anio-node-foundation/fs-remove.git"
+    "url": "git+https://github.com/anio-fs-org/remove.git"
   },
   "devDependencies": {
     "@anio-fs/api": "^4.0.0",
