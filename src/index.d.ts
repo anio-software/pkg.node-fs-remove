@@ -1,5 +1,5 @@
 /**
- * @brief Asynchronously emove a path of any type.
+ * @brief Asynchronously remove a path of any type.
  * @description
  * Asynchronously removes the entry located at `path`.
  * This function does not throw if `path` does not exist.
@@ -8,7 +8,7 @@
 export function remove(path : string) : Promise<void>;
 
 /**
- * @brief Synchronously emove a path of any type.
+ * @brief Synchronously remove a path of any type.
  * @description
  * Synchronously removes the entry located at `path`.
  * This function does not throw if `path` does not exist.
