@@ -1,6 +1,7 @@
 import {generateFromTemplate} from "vipen/autogenerate"
 
 const asyncToSync = {
+	"import {scandir} from \"@anio-fs/scandir\"": "import {scandirSync} from \"@anio-fs/scandir\"",
 	"async function removeSymbolicLink(": "function removeSymbolicLink(",
 	"await fs_object.unlink(src)": "fs_object.unlink(src)",
 	"async function removeFile(": "function removeFile(",
