@@ -1,31 +1,30 @@
+import {unlink, rmdir} from "@anio-fs/api/sync"
 import {getTypeOfPathSync} from "@anio-fs/path-type"
 import {scandirSync} from "@anio-fs/scandir"
 
-function removeSymbolicLink(fs_object, src) {
-	fs_object.unlink(src)
+function removeSymbolicLink(src) {
+	unlink(src)
 }
 
-function removeFile(fs_object, src) {
-	fs_object.unlink(src)
+function removeFile(src) {
+	unlink(src)
 }
 
-function removeDirectory(fs_object, src) {
+function removeDirectory(src) {
 	scandirSync(src, {
 		callback({type, relative_path, absolute_path}) {
-			const args = [fs_object, absolute_path]
-
 			if (type === "link") {
-				removeSymbolicLink(...args)
+				removeSymbolicLink(absolute_path)
 			} else if (type === "dir") {
-				removeDirectory(...args)
+				removeDirectory(absolute_path)
 			} else {
-				removeFile(...args)
+				removeFile(absolute_path)
 			}
 		},
 		reverse: true
 	})
 
-	fs_object.rmdir(src)
+	rmdir(src)
 }
 
 const remove_map = {
@@ -36,7 +35,7 @@ const remove_map = {
 	"dir": removeDirectory
 }
 
-export default function(fs_object, src) {
+export default function(src) {
 	const path_type = getTypeOfPathSync(src)
 
 	// 'src' does not exist
@@ -50,5 +49,5 @@ export default function(fs_object, src) {
 
 	const remove_fn = remove_map[path_type]
 
-	return remove_fn(fs_object, src)
+	return remove_fn(src)
 }

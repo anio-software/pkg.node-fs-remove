@@ -1,31 +1,30 @@
+import {unlink, rmdir} from "@anio-fs/api/async"
 import {getTypeOfPath} from "@anio-fs/path-type"
 import {scandir} from "@anio-fs/scandir"
 
-async function removeSymbolicLink(fs_object, src) {
-	await fs_object.unlink(src)
+async function removeSymbolicLink(src) {
+	await unlink(src)
 }
 
-async function removeFile(fs_object, src) {
-	await fs_object.unlink(src)
+async function removeFile(src) {
+	await unlink(src)
 }
 
-async function removeDirectory(fs_object, src) {
+async function removeDirectory(src) {
 	await scandir(src, {
 		async callback({type, relative_path, absolute_path}) {
-			const args = [fs_object, absolute_path]
-
 			if (type === "link") {
-				await removeSymbolicLink(...args)
+				await removeSymbolicLink(absolute_path)
 			} else if (type === "dir") {
-				await removeDirectory(...args)
+				await removeDirectory(absolute_path)
 			} else {
-				await removeFile(...args)
+				await removeFile(absolute_path)
 			}
 		},
 		reverse: true
 	})
 
-	await fs_object.rmdir(src)
+	await rmdir(src)
 }
 
 const remove_map = {
@@ -36,7 +35,7 @@ const remove_map = {
 	"dir": removeDirectory
 }
 
-export default async function(fs_object, src) {
+export default async function(src) {
 	const path_type = await getTypeOfPath(src)
 
 	// 'src' does not exist
@@ -50,5 +49,5 @@ export default async function(fs_object, src) {
 
 	const remove_fn = remove_map[path_type]
 
-	return await remove_fn(fs_object, src)
+	return await remove_fn(src)
 }
