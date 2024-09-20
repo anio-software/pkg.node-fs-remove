@@ -1,4 +1,4 @@
-import {generateFromTemplate} from "vipen/autogenerate"
+import {generateFromTemplate} from "fourtune/autogenerate"
 
 const asyncToSync = {
 	"import {unlink, rmdir} from \"@anio-fs/api/async\"": "import {unlink, rmdir} from \"@anio-fs/api/sync\"",
