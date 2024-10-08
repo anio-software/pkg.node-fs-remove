@@ -1,5 +1,6 @@
 {
   "name": "@anio-fs/remove",
+  "type": "module",
   "version": "5.0.0",
   "description": "Remove a path of any type.",
   "main": "./dist/package.min.mjs",
