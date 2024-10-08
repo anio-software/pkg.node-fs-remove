@@ -1,4 +1,4 @@
-import {remove} from "../src/index.mjs"
+import {remove} from "../dist/default/index.mjs"
 
 console.log(
 	await remove("examples/src")
