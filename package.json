@@ -3,8 +3,12 @@
   "type": "module",
   "version": "5.0.0",
   "description": "Remove a path of any type.",
-  "main": "./dist/package.min.mjs",
-  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/default/index.min.mjs",
+      "types": "./dist/default/index.d.mts"
+    }
+  },
   "author": "Anio Software <info@anio.software>",
   "license": "MIT",
   "repository": {
