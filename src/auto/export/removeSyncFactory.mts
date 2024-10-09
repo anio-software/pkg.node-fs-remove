@@ -7,7 +7,7 @@ import {scandirSyncFactory as scandirFactory} from "@anio-fs/scandir"
 import type {FunctionTypeFromFactoryType, UsableContextType, ContextInstanceType} from "@fourtune/realm-js"
 import {useContext} from "@fourtune/realm-js"
 
-import fn from "./removeSync.mts"
+import {removeSync as fn} from "./removeSync.mts"
 
 interface Dependencies {
 	getTypeOfPath: FunctionTypeFromFactoryType<typeof getTypeOfPathFactory>
@@ -63,7 +63,7 @@ function removeImplementation(src : string, context : ContextInstanceType, depen
 	unlink(src)
 }
 
-export default function(context_or_options : UsableContextType = {}) : typeof fn {
+export function removeSyncFactory(context_or_options : UsableContextType = {}) : typeof fn {
 	const context = useContext(context_or_options)
 
 	const dependencies : Dependencies = {

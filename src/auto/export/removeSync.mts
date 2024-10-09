@@ -1,4 +1,4 @@
-import factory from "./removeSyncFactory.mts"
+import {removeSyncFactory as factory} from "./removeSyncFactory.mts"
 
 const impl = factory()
 
@@ -9,6 +9,6 @@ const impl = factory()
  * This function does not throw if `path` does not exist.
  * @param path The path to be deleted.
  */
-export default function(src : string) : void {
+export function removeSync(src : string) : void {
 	impl(src)
 }

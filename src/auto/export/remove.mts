@@ -1,4 +1,4 @@
-import factory from "./removeFactory.mts"
+import {removeFactory as factory} from "./removeFactory.mts"
 
 const impl = factory()
 
@@ -9,6 +9,6 @@ const impl = factory()
  * This function does not throw if `path` does not exist.
  * @param path The path to be deleted.
  */
-export default async function(src : string) : Promise<void> {
+export async function remove(src : string) : Promise<void> {
 	await impl(src)
 }
