@@ -19,8 +19,8 @@
     "@anio-fs/api": "^8.0.1",
     "@anio-fs/path-type": "^6.0.0",
     "@anio-fs/scandir": "^6.1.0",
-    "@fourtune/realm-js": "^0.16.0",
-    "fourtune": "^0.9.0"
+    "@fourtune/realm-js": "^0.17.1",
+    "fourtune": "^0.11.0"
   },
   "scripts": {
     "prepare": "./node_modules/.bin/fourtune ."
