@@ -18,7 +18,7 @@
   "devDependencies": {
     "@anio-fs/api": "^8.0.3",
     "@anio-fs/path-type": "^6.0.6",
-    "@anio-fs/scandir": "^7.1.0",
+    "@anio-fs/scandir": "^7.1.4",
     "@fourtune/realm-js": "^0.26.0",
     "fourtune": "^0.18.0"
   },
