@@ -1,77 +1,26 @@
-import {unlink, rmdir} from "@anio-fs/api/sync"
-
-import {getTypeOfPathSyncFactory as getTypeOfPathFactory, PathType} from "@anio-fs/path-type"
-
-import {scandirSyncFactory as scandirFactory} from "@anio-fs/scandir"
-
-import type {FunctionTypeFromFactoryType, UsableContextType, ContextInstanceType} from "@fourtune/realm-js"
+import type {UserContextType} from "@fourtune/realm-js"
 import {useContext} from "@fourtune/realm-js"
 
-import {removeSync as fn} from "./removeSync.mts"
+import type {DependenciesType} from "#/auto/DependenciesSyncType.d.mts"
 
-interface Dependencies {
-	getTypeOfPath: FunctionTypeFromFactoryType<typeof getTypeOfPathFactory>
-	scandir : FunctionTypeFromFactoryType<typeof scandirFactory>
-}
+import implementation from "#/auto/implementationSync.mts"
 
-function removeDirectory(src : string, dependencies : Dependencies) {
-	const {scandir} = dependencies
+/* needed to make doctypes work in LSP */
+import type {ImplementationDocType} from "#/auto/ImplementationSyncDocType.d.mts"
 
-	scandir(src, {
-		callback({type, absolute_path}) {
-			if (
-				type === PathType.linkToDir ||
-				type === PathType.linkToFile ||
-				type === PathType.brokenLink
-				) {
-				unlink(absolute_path)
-			} else if (type === PathType.regularDir) {
-				removeDirectory(absolute_path, dependencies)
-			} else {
-				unlink(absolute_path)
-			}
-		},
-		reverse: true
-	})
+import {scandirSyncFactory} from "@anio-fs/scandir"
+import {getTypeOfPathSyncFactory} from "@anio-fs/path-type"
 
-	rmdir(src)
-}
+/* ImplementationDocType is needed to make doctypes work in LSP */
+export function removeSyncFactory(user : UserContextType = {}) : ImplementationDocType {
+	const context = useContext(user)
 
-function removeImplementation(src : string, context : ContextInstanceType, dependencies : Dependencies) : void {
-	context.log.debug(`removing "${src}"`)
-
-	const path_type = dependencies.getTypeOfPath(src)
-
-	if (path_type === PathType.nonExisting) return
-
-	switch (path_type) {
-		case PathType.linkToDir:
-		case PathType.linkToFile:
-		case PathType.brokenLink: {
-			unlink(src)
-
-			return
-		}
-
-		case PathType.regularDir: {
-			removeDirectory(src, dependencies)
-
-			return
-		}
+	const dependencies : DependenciesType = {
+		scandir: scandirSyncFactory(user),
+		getTypeOfPath: getTypeOfPathSyncFactory(user),
 	}
 
-	unlink(src)
-}
-
-export function removeSyncFactory(context_or_options : UsableContextType = {}) : typeof fn {
-	const context = useContext(context_or_options)
-
-	const dependencies : Dependencies = {
-		getTypeOfPath: getTypeOfPathFactory(context_or_options),
-		scandir: scandirFactory(context_or_options)
-	}
-
-	return function remove(src : string) : ReturnType<typeof fn> {
-		return removeImplementation(src, context, dependencies)
+	return function removeSync(...args: Parameters<ImplementationDocType>) : ReturnType<ImplementationDocType> {
+		return implementation(context, dependencies, ...args)
 	}
 }

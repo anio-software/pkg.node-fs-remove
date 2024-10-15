@@ -1,14 +1,8 @@
-import {removeSyncFactory as factory} from "./removeSyncFactory.mts"
+import {removeSyncFactory as factory} from "#/auto/export/removeSyncFactory.mts"
+
+/* ImplementationDocType is needed to make doctypes work in LSP */
+import type {ImplementationDocType} from "#/auto/ImplementationSyncDocType.d.mts"
 
 const impl = factory()
 
-/**
- * @brief Synchronously remove a path of any type.
- * @description
- * Synchronously removes the entry located at `path`.
- * This function does not throw if `path` does not exist.
- * @param path The path to be deleted.
- */
-export function removeSync(src : string) : void {
-	impl(src)
-}
+export const removeSync : ImplementationDocType = impl

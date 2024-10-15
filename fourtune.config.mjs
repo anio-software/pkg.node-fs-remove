@@ -2,13 +2,14 @@ import {generateSyncAsyncVariant} from "fourtune/autogenerate"
 
 export default {
 	realm: "js",
-	type: "package",
+	type: "async-sync",
 
-	autogenerate: {
-		"export/removeFactory.mts": generateSyncAsyncVariant("template/removeFactory.mts", "async"),
-		"export/removeSyncFactory.mts": generateSyncAsyncVariant("template/removeFactory.mts", "sync"),
+	target: {
+		function_name: "remove",
 
-		"export/remove.mts": generateSyncAsyncVariant("template/remove.mts", "async"),
-		"export/removeSync.mts": generateSyncAsyncVariant("template/remove.mts", "sync"),
+		dependencies: {
+			"@anio-fs/scandir": "scandir",
+			"@anio-fs/path-type": "getTypeOfPath"
+		}
 	}
 }
