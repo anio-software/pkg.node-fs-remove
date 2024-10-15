@@ -1,6 +1,6 @@
 export default {
 	realm: "js",
-	type: "async-sync",
+	type: "package:async/sync",
 
 	target: {
 		function_name: "remove",
