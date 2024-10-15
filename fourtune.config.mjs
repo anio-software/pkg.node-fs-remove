@@ -1,5 +1,3 @@
-import {generateSyncAsyncVariant} from "fourtune/autogenerate"
-
 export default {
 	realm: "js",
 	type: "async-sync",
