@@ -1,16 +1,14 @@
 /* -------- required imports by template -------- */
-import type {ContextInstanceType} from "@fourtune/realm-js"
-import type {DependenciesType} from "#/auto/DependenciesType.d.mts"
-//import type {DependenciesType} from "#/auto/DependenciesSyncType.d.mts"
+import type {ContextInstance} from "@fourtune/realm-js/v0/runtime"
+import type {DependenciesType} from "#~auto/DependenciesType.d.mts"
+//import type {DependenciesType} from "#~auto/DependenciesSyncType.d.mts"
 
-import type {ImplementationDocType} from "#/auto/ImplementationDocType.d.mts"
-//import type {ImplementationDocType} from "#/auto/ImplementationSyncDocType.d.mts"
+import type {ImplementationDocType} from "#~auto/ImplementationDocType.d.mts"
+//import type {ImplementationDocType} from "#~auto/ImplementationSyncDocType.d.mts"
 /* -------- required imports by template -------- */
 
 import {unlink, rmdir} from "@anio-fs/api/async"
 //import {unlink, rmdir} from "@anio-fs/api/sync"
-
-import {PathType} from "@anio-fs/path-type"
 
 async function removeDirectory(
 //function removeDirectory(
@@ -24,13 +22,13 @@ async function removeDirectory(
 		async callback({type, absolute_path}) {
 //		callback({type, absolute_path}) {
 			if (
-				type === PathType.linkToDir ||
-				type === PathType.linkToFile ||
-				type === PathType.brokenLink
+				type === "linkToDir" ||
+				type === "linkToFile" ||
+				type === "brokenLink"
 				) {
 				await unlink(absolute_path)
 //				unlink(absolute_path)
-			} else if (type === PathType.regularDir) {
+			} else if (type === "regularDir") {
 				await removeDirectory(dependencies, absolute_path)
 //				removeDirectory(dependencies, absolute_path)
 			} else {
@@ -47,7 +45,7 @@ async function removeDirectory(
 
 async function removeImplementation(
 //function removeImplementation(
-	context : ContextInstanceType,
+	context : ContextInstance,
 	dependencies : DependenciesType,
 	src : string,
 ) : Promise<void> {
@@ -57,19 +55,19 @@ async function removeImplementation(
 	const path_type = await dependencies.getTypeOfPath(src)
 //	const path_type = dependencies.getTypeOfPath(src)
 
-	if (path_type === PathType.nonExisting) return
+	if (path_type === "nonExisting") return
 
 	switch (path_type) {
-		case PathType.linkToDir:
-		case PathType.linkToFile:
-		case PathType.brokenLink: {
+		case "linkToDir":
+		case "linkToFile":
+		case "brokenLink": {
 			await unlink(src)
 //			unlink(src)
 
 			return
 		}
 
-		case PathType.regularDir: {
+		case "regularDir": {
 			await removeDirectory(dependencies, src)
 //			removeDirectory(dependencies, src)
 
@@ -83,10 +81,10 @@ async function removeImplementation(
 
 export default async function(
 //export default function(
-	context : ContextInstanceType,
+	context : ContextInstance,
 	dependencies : DependenciesType,
 	/* add additional parameters here */
-	src : string
+	src: string
 ) : ReturnType<ImplementationDocType> {
 
 	return await removeImplementation(context, dependencies, src)
