@@ -1,16 +1,7 @@
 {
-	"compilerOptions": {
-		"allowImportingTsExtensions": true,
-		"allowSyntheticDefaultImports": true,
-		"types": ["node"],
-		"skipLibCheck": false,
-		"strict": true,
-		"target": "esnext",
-		"module": "nodenext",
-		"moduleResolution": "nodenext",
-		"baseUrl": "./",
-		"paths": {
-			"#/*": ["./src/*"]
-		}
-	}
+	"references": [
+		{"path": "./auto/cfg/tsconfig.src.json"},
+		{"path": "./auto/cfg/tsconfig.assets.json"},
+		{"path": "./auto/cfg/tsconfig.auto-src.json"}
+	]
 }
