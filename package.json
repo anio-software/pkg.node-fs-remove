@@ -16,9 +16,6 @@
     "url": "git+https://github.com/anio-fs-org/remove.git"
   },
   "devDependencies": {
-    "@anio-fs/api": "^9.0.0",
-    "@anio-fs/path-type": "^9.0.0",
-    "@anio-fs/scandir": "^9.0.0",
     "@fourtune/core": "^0.1101.0",
     "@fourtune/realm-js": "^0.30000.2",
     "fourtune": "^0.30000.0"
