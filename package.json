@@ -5,8 +5,8 @@
   "description": "Remove a path of any type.",
   "exports": {
     ".": {
-      "import": "./dist/default/index.min.mjs",
-      "types": "./dist/default/index.d.mts"
+      "types": "./dist/default/index.min.d.mts",
+      "import": "./dist/default/index.min.mjs"
     }
   },
   "author": "Anio Software <info@anio.software>",
