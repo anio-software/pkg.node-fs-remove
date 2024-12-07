@@ -1,5 +1,5 @@
 {
-  "name": "@anio-fs/remove",
+  "name": "@aniojs/node-fs-remove",
   "type": "module",
   "version": "0.0.0",
   "description": "Remove a path of any type.",
@@ -13,7 +13,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anio-fs-org/remove.git"
+    "url": "git+https://github.com/aniojs-org/node-fs-remove.git"
   },
   "devDependencies": {
     "@aniojs-private/node-async-sync-fs": "^0.1.1",
