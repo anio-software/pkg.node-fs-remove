@@ -1,7 +1,7 @@
 {
   "name": "@anio-fs/remove",
   "type": "module",
-  "version": "8.0.0",
+  "version": "0.0.0",
   "description": "Remove a path of any type.",
   "exports": {
     ".": {
