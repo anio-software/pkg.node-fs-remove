@@ -8,7 +8,7 @@ import {scandirCallbackFactory} from "@aniojs/node-fs-scandir"
 // ^^^ dependencies declared via AnioJsDependencies type
 
 // vvv--- types needed for implementation
-/* couldn't find the type 'Promise' at the top level */
+/* couldn't find a user defined type named 'Promise' at the top level */
 // ^^^--- types needed for implementation
 
 /**
@@ -37,7 +37,7 @@ declare function remove(
 export function removeFactory(context: RuntimeWrappedContextInstance) : typeof remove {
 	const dependencies : AnioJsDependencies = {
 		getTypeOfPath: getTypeOfPathFactory(context),
-	scandir: scandirCallbackFactory(context)
+		scandir: scandirCallbackFactory(context)
 	}
 
 	const project = getProject()

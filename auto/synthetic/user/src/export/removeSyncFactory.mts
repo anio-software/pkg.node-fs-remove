@@ -33,7 +33,7 @@ declare function removeSync(
 export function removeSyncFactory(context: RuntimeWrappedContextInstance) : typeof removeSync {
 	const dependencies : AnioJsDependencies = {
 		getTypeOfPath: getTypeOfPathSyncFactory(context),
-	scandir: scandirSyncCallbackFactory(context)
+		scandir: scandirSyncCallbackFactory(context)
 	}
 
 	const project = getProject()
