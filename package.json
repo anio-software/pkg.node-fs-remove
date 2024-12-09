@@ -1,20 +1,20 @@
 {
   "name": "@aniojs/node-fs-remove",
-  "type": "module",
   "version": "0.1.1",
+  "author": "Anio Software <info@anio.software>",
   "description": "Remove a path of any type.",
+  "license": "MIT",
   "exports": {
     ".": {
       "types": "./dist/default/index.min.d.mts",
       "import": "./dist/default/index.min.mjs"
     }
   },
-  "author": "Anio Software <info@anio.software>",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aniojs-org/node-fs-remove.git"
   },
+  "type": "module",
   "devDependencies": {
     "@aniojs-private/node-async-sync-fs": "^0.1.1",
     "@aniojs/node-fs-path-type": "^1.0.1",
