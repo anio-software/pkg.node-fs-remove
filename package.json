@@ -17,7 +17,7 @@
   "type": "module",
   "devDependencies": {
     "@aniojs-private/node-async-sync-fs": "^0.2.0",
-    "@aniojs/node-fs-path-type": "^1.0.1",
+    "@aniojs/node-fs-path-type": "^1.0.2",
     "@aniojs/node-fs-scandir": "^0.1.1",
     "@fourtune/core": "^0.1101.0",
     "@fourtune/realm-js": "^0.31000.2",
