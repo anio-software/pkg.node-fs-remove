@@ -1,6 +1,6 @@
 {
   "name": "@aniojs/node-fs-remove",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "author": "Anio Software <info@anio.software>",
   "description": "Remove a path of any type.",
   "license": "MIT",
