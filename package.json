@@ -16,7 +16,7 @@
   },
   "type": "module",
   "devDependencies": {
-    "@aniojs-private/node-async-sync-fs": "^0.2.1",
+    "@aniojs-private/node-async-sync-fs": "^0.3.0",
     "@aniojs/node-fs-path-type": "^1.0.4",
     "@aniojs/node-fs-scandir": "^0.1.4",
     "@fourtune/core": "^0.1101.0",
