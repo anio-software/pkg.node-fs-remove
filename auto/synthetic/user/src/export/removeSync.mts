@@ -2,7 +2,7 @@ import {createContext} from "@fourtune/realm-js/v0/runtime"
 
 import {removeSyncFactory as factory} from "#~synthetic/user/export/removeSyncFactory.mts"
 
-const fn = factory(createContext())
+let __fnImplementation: any = null
 
 /**
  * @brief Synchronously remove a path of any type.
@@ -12,5 +12,7 @@ const fn = factory(createContext())
  * @param path The path to be deleted.
  */
 export function removeSync(input_path: string) : undefined {
-	return fn(input_path)
+	if (__fnImplementation === null) __fnImplementation = factory(createContext());
+
+	return __fnImplementation(input_path)
 }

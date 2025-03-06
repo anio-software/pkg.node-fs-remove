@@ -6,7 +6,7 @@ import {createContext} from "@fourtune/realm-js/v0/runtime"
 
 import {removeFactory as factory} from "#~synthetic/user/export/removeFactory.mts"
 
-const fn = factory(createContext())
+let __fnImplementation: any = null
 
 /**
  * @brief Asynchronously remove a path of any type.
@@ -16,5 +16,7 @@ const fn = factory(createContext())
  * @param path The path to be deleted.
  */
 export async function remove(input_path: string) : Promise<undefined> {
-	return await fn(input_path)
+	if (__fnImplementation === null) __fnImplementation = factory(createContext());
+
+	return await __fnImplementation(input_path)
 }
