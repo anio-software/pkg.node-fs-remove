@@ -1,38 +1,23 @@
 {
-  "name": "@aniojs/node-fs-remove",
-  "version": "0.1.7",
-  "author": "Anio Software <info@anio.software>",
+  "private": true,
+  "type": "module",
+  "name": "@anio-software/pkg.node-fs-remove",
+  "version": "0.0.0",
   "description": "Remove a path of any type.",
-  "license": "MIT",
-  "exports": {
-    ".": {
-      "types": "./dist/default/index.min.d.mts",
-      "import": "./dist/default/index.min.mjs"
-    }
-  },
+  "author": "Anio Software <info@anio.software>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aniojs-org/node-fs-remove.git"
+    "url": "git+https://github.com/anio-software/pkg.node-fs-remove.git"
   },
-  "type": "module",
+  "license": "MIT",
   "devDependencies": {
-    "@aniojs-private/node-async-sync-fs": "^0.3.0",
-    "@aniojs/node-fs-path-type": "^1.0.6",
-    "@aniojs/node-fs-scandir": "^0.2.4",
-    "@fourtune/core": "^0.1101.0",
-    "@fourtune/realm-js": "^1.0.3",
-    "fourtune": "^0.30000.1"
-  },
-  "peerDependencies": {
-    "@types/node": ">=22.7.x"
-  },
-  "scripts": {
-    "prepare": "./node_modules/.bin/fourtune ."
-  },
-  "engines": {
-    "node": ">=22.7.x"
-  },
-  "files": [
-    "./dist/"
-  ]
+    "@anio-software/enkore": "^0.0.104",
+    "@anio-software/enkore.core": "^0.11.2",
+    "@anio-software/enkore.target-js-node": "^0.0.259-canary-390192b1-2480e47a",
+    "@anio-software/pkg-private.node-consistent-fs": "^0.0.2",
+    "@anio-software/pkg.is": "^0.0.3",
+    "@anio-software/pkg.js-utils": "^0.0.1",
+    "@anio-software/pkg.node-fs-path-type": "^0.0.8",
+    "@anio-software/pkg.node-fs-scandir": "^0.0.15"
+  }
 }

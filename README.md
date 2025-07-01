@@ -1,13 +1,11 @@
-# @aniojs/node-fs-remove
+# @anio-software/pkg.node-fs-remove
 
 Remove a path of any type.
 
 ```js
-import {remove} from "@aniojs/node-fs-remove"
+import {remove} from "@anio-software/pkg.node-fs-remove"
 
 console.log(
-	await remove("examples/src")
+	await remove("path/to/remove")
 )
-
-console.log("done")
 ```

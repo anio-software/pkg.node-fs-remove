@@ -1,0 +1,18 @@
+# This file is automatically managed by enkore
+# DO NOT ADD ENTRIES HERE, THEY WILL BE REMOVED
+/src/Dependencies.ts
+/src/DependenciesSync.ts
+/src/RemoveOptions.ts
+/src/RemoveSyncOptions.ts
+/src/removeAnything.ts
+/src/removeAnythingSync.ts
+/src/removeDirectory.ts
+/src/removeDirectorySync.ts
+/src/removeFile.ts
+/src/removeFileSync.ts
+/src/remove.ts
+/src/removeSync.ts
+/export/removeFactory.ts
+/export/remove.ts
+/export/removeSyncFactory.ts
+/export/removeSync.ts
