@@ -8,10 +8,10 @@
 /src/removeAnythingSync.ts
 /src/removeDirectory.ts
 /src/removeDirectorySync.ts
-/src/removeFile.ts
-/src/removeFileSync.ts
 /src/remove.ts
 /src/removeSync.ts
+/src/removeFile.ts
+/src/removeFileSync.ts
 /export/removeFactory.ts
 /export/remove.ts
 /export/removeSyncFactory.ts
