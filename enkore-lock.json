@@ -28,33 +28,33 @@
         "project/src/removeDirectorySync.ts": {
             "hash": "b28d1b5489af8f4ffb9c5962ed3a0d86058dfe44d6eb7f45c566ed3f1762b890"
         },
-        "project/src/removeFile.ts": {
-            "hash": "f5d8c3b979c29ff17db969ac49195529b0fd198716fe78752311f877c3a19dae"
-        },
-        "project/src/removeFileSync.ts": {
-            "hash": "b576832f15e037dd29093304355edb8ce6d41780ac2d5faabf52b3e41fbf58b1"
-        },
         "project/src/remove.ts": {
             "hash": "681907a2f948a75fca1c7bbea97f2114f94de3c7b832844471ad2864a3f9ed4e"
         },
         "project/src/removeSync.ts": {
             "hash": "858d95600ce38131920539e590ffda0be36eaa1543c9f1b04b340b2585ae2a6a"
         },
+        "project/src/removeFile.ts": {
+            "hash": "f5d8c3b979c29ff17db969ac49195529b0fd198716fe78752311f877c3a19dae"
+        },
+        "project/src/removeFileSync.ts": {
+            "hash": "b576832f15e037dd29093304355edb8ce6d41780ac2d5faabf52b3e41fbf58b1"
+        },
         "project/export/removeFactory.ts": {
             "hash": "e1fd25166c838193ec0376b769d57dc97c0d67ec97f54c5d2792efdcaed74620"
         },
         "project/export/remove.ts": {
-            "hash": "86ec167663b1de4202ea4e5ac7c67285c6e0d0a320446da15e36745dcf4da813"
+            "hash": "b7a0ee052bc999e69551cea42803f8d9d184567df30fb0d15828a4836c47278b"
         },
         "project/export/removeSyncFactory.ts": {
             "hash": "9d9f3a169778624ad09a0469116c447fa04f7ef2258a140fa4adc68e5f0bd917"
         },
         "project/export/removeSync.ts": {
-            "hash": "9ea36216f7d7e04937bd8adf521fd634d0cc76faa775dbb7e49e2dc3e82e24a4"
+            "hash": "f4ec183afe79ee4ddf95f6e9bb4d17bcac9b391567e47f521165a49d9dd9f040"
         }
     },
     "toolchain": [
         "js",
-        55
+        77
     ]
 }
