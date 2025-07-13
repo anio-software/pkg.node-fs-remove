@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "name": "@anio-software/pkg.node-fs-remove",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Remove a path of any type.",
   "author": "Anio Software <info@anio.software>",
   "repository": {
