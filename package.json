@@ -18,6 +18,6 @@
     "@anio-software/pkg.is": "^0.0.3",
     "@anio-software/pkg.js-utils": "^0.0.4",
     "@anio-software/pkg.node-fs-path-type": "^0.0.13",
-    "@anio-software/pkg.node-fs-scandir": "^0.0.18"
+    "@anio-software/pkg.node-fs-scandir": "^0.0.19"
   }
 }
