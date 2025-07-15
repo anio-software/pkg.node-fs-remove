@@ -14,7 +14,7 @@
     "@anio-software/enkore": "^0.0.190",
     "@anio-software/enkore.core": "^0.13.1",
     "@anio-software/enkore.target-js-node": "^0.0.404",
-    "@anio-software/pkg-private.node-consistent-fs": "^0.0.4",
+    "@anio-software/pkg-private.node-consistent-fs": "^0.0.6",
     "@anio-software/pkg.is": "^0.0.3",
     "@anio-software/pkg.js-utils": "^0.0.20",
     "@anio-software/pkg.node-fs-path-type": "^0.0.20",
